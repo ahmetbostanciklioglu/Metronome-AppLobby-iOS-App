@@ -94,6 +94,34 @@ struct BottomBarView: View {
         isMuted.toggle()
         audioPlayer?.volume = isMuted ? 0.0 : 1.0
     }
+    
+    private func createButton(title: String? = nil, imageName: String? = nil, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            if let title = title {
+                Text(title)
+                    .font(.headline)
+                    .foregroundColor(.white)
+            } else if let imageName = imageName {
+                Image(systemName: imageName)
+                    .resizable()
+                    .foregroundColor(.white)
+                    .frame(width: 20, height: 20)
+            }
+        }
+    }
+    
+    private var backgroundGradient: LinearGradient {
+        LinearGradient(
+            gradient: Gradient(
+                colors: [
+                    Color(red: 152/255, green: 134/255, blue: 246/255),
+                    Color(red: 112/255, green: 74/255, blue: 197/255)
+                ]
+            ),
+            startPoint: .leading,
+            endPoint: .trailing
+        )
+    }
 }
 
 

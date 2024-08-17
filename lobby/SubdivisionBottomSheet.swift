@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct SubdivisionBottomSheet<Content: View>: View {
     @Binding var isPresented: Bool
     let maxHeight: CGFloat
@@ -28,13 +27,13 @@ struct SubdivisionBottomSheet<Content: View>: View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
-                self.content
-                    .frame(width: geometry.size.width, height: self.maxHeight)
+                content
+                    .frame(width: geometry.size.width, height: maxHeight)
                     .background(Color.white)
                     .cornerRadius(16)
                     .shadow(radius: 5)
-                    .offset(y: self.offset)
-                    .animation(.interactiveSpring())
+                    .offset(y: offset)
+                    .animation(.interactiveSpring(), value: isPresented)
             }
             .edgesIgnoringSafeArea(.all)
         }

@@ -16,18 +16,21 @@ struct SoundButton: View {
     let action: () -> Void
     
     var body: some View {
-        Button(action: {
-            action()
-        }) {
+        Button(action: action) {
             Text(title)
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(isSelected ?  Color(UIColor(red: 130/255, green: 89/255, blue: 221/255, alpha: 1.0)) :  Color(UIColor(red: 176/255, green: 141/255, blue: 235/255, alpha: 1.0)))
+                .background(buttonBackgroundColor)
                 .cornerRadius(10)
         }
         .padding(.horizontal, 10)
+    }
+    
+    private var buttonBackgroundColor: Color {
+        isSelected ? Color(red: 130/255, green: 89/255, blue: 221/255) :
+                     Color(red: 176/255, green: 141/255, blue: 235/255)
     }
 }
 

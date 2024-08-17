@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A76B08E2C715B3600EDDDE9 /* lobbyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76B08D2C715B3600EDDDE9 /* lobbyApp.swift */; };
+		2A76B08E2C715B3600EDDDE9 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76B08D2C715B3600EDDDE9 /* Metronome.swift */; };
 		2A76B0902C715B3600EDDDE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A76B08F2C715B3600EDDDE9 /* ContentView.swift */; };
 		2A76B0922C715B3900EDDDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A76B0912C715B3900EDDDE9 /* Assets.xcassets */; };
 		2A76B0952C715B3900EDDDE9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A76B0942C715B3900EDDDE9 /* Preview Assets.xcassets */; };
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		2A76B08A2C715B3600EDDDE9 /* lobby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lobby.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A76B08D2C715B3600EDDDE9 /* lobbyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lobbyApp.swift; sourceTree = "<group>"; };
+		2A76B08D2C715B3600EDDDE9 /* Metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
 		2A76B08F2C715B3600EDDDE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A76B0912C715B3900EDDDE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A76B0942C715B3900EDDDE9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				2A76B0A92C715CA800EDDDE9 /* sounds */,
-				2A76B08D2C715B3600EDDDE9 /* lobbyApp.swift */,
+				2A76B08D2C715B3600EDDDE9 /* Metronome.swift */,
 				2A76B08F2C715B3600EDDDE9 /* ContentView.swift */,
 				2A76B0912C715B3900EDDDE9 /* Assets.xcassets */,
 				2A76B0932C715B3900EDDDE9 /* Preview Content */,
@@ -185,7 +185,7 @@
 				2A76B0902C715B3600EDDDE9 /* ContentView.swift in Sources */,
 				2A76B0A62C715C4B00EDDDE9 /* SoundButton.swift in Sources */,
 				2A76B0A82C715C6E00EDDDE9 /* SwiftUISlider.swift in Sources */,
-				2A76B08E2C715B3600EDDDE9 /* lobbyApp.swift in Sources */,
+				2A76B08E2C715B3600EDDDE9 /* Metronome.swift in Sources */,
 				2A76B09C2C715BDD00EDDDE9 /* SubdivisionBottomSheet.swift in Sources */,
 				2A76B09E2C715BF600EDDDE9 /* BottomBarView.swift in Sources */,
 				2A76B0A02C715C0F00EDDDE9 /* BottomSheetContent.swift in Sources */,

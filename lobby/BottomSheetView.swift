@@ -5,7 +5,6 @@
 //  Created by Ahmet Bostancıklıoğlu on 18.08.2024.
 //
 
-
 import Foundation
 import SwiftUI
 
@@ -28,27 +27,26 @@ struct BottomSheetView<Content: View>: View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
-                    
-                self.content
-                    .frame(width: geometry.size.width, height: self.maxHeight)
+                
+                content
+                    .frame(width: geometry.size.width, height: maxHeight)
                     .background(
                         LinearGradient(
                             gradient: Gradient(colors:[
-                                Color(UIColor(red: 237/255, green: 227/255, blue: 253/255, alpha: 1.0)),
-                                Color(UIColor(red: 214/255, green: 184/255, blue: 247/255, alpha: 1.0)),
-                                Color(UIColor(red: 201/255, green: 156/255, blue: 241/255, alpha: 1.0))
+                                Color(red: 237/255, green: 227/255, blue: 253/255),
+                                Color(red: 214/255, green: 184/255, blue: 247/255),
+                                Color(red: 201/255, green: 156/255, blue: 241/255)
                             ]),
                             startPoint: .top,
-                          endPoint: .bottom
+                            endPoint: .bottom
                         )
                     )
                     .cornerRadius(16)
                     .shadow(radius: 5)
-                    .offset(y: self.offset)
-                    .animation(.interactiveSpring())
+                    .offset(y: offset)
+                    .animation(.interactiveSpring(), value: isPresented)
             }
             .edgesIgnoringSafeArea(.all)
         }
     }
 }
-

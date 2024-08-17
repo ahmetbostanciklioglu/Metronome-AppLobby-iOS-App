@@ -4,93 +4,42 @@
 //
 //  Created by Ahmet Bostancıklıoğlu on 18.08.2024.
 //
-
 import Foundation
 import SwiftUI
 import AVFoundation
-
 
 struct BottomBarView: View {
     
     @Binding var isBottomSheetPresented: Bool
     @Binding var selectedContent: BottomSheetContent
-    @Binding var beatsDivision : String // Add a binding for the beats/division value
+    @Binding var beatsDivision: String
     @Binding var audioPlayer: AVAudioPlayer?
-    @Binding var isMuted : Bool
+    @Binding var isMuted: Bool
     
     var body: some View {
         HStack {
             Spacer()
-            Button(action: {
-                self.selectedContent = .subdivision
-                self.isBottomSheetPresented.toggle()
-            }) {
-                    Text(beatsDivision)
-                        .font(.headline)
-                        .foregroundColor(.white)
-            }
+            createButton(title: beatsDivision, action: {
+                selectedContent = .subdivision
+                isBottomSheetPresented.toggle()
+            }).font(.headline).frame(width: 40)
             Spacer()
+            createButton(imageName: "music.note", action: {
+                selectedContent = .sound
+                isBottomSheetPresented.toggle()
+            })
             Spacer()
-                .frame(width: 20)
-            
-            Button(action: {
-                self.selectedContent = .sound
-                self.isBottomSheetPresented.toggle()
-            }) {
-               
-                    Image(systemName: "music.note")
-                        .resizable()
-                        .foregroundColor(.white)
-                        .frame(width: 16, height: 20)
-                
-            }
-            Spacer()
-            Spacer()
-                .frame(width: 20)
-            Button(action: {
-                toggleMute()
-            }) {
-                    Image(systemName: isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill")
-                        .resizable()
-                        .foregroundColor(.white)
-                        .frame(width: 20, height: 20, alignment: .center)
-            }
+            createButton(imageName: isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill", action: toggleMute)
             Spacer()
         }
         .padding()
-        .background(
-            LinearGradient(
-                gradient: Gradient(
-                    colors:[
-                        Color(
-                            UIColor(
-                                red: 152/255,
-                                green: 134/255,
-                                blue: 246/255,
-                                alpha: 1.0
-                            )
-                        ),
-                        Color(
-                            UIColor(
-                                red: 112/255,
-                                green: 74/255,
-                                blue: 197/255,
-                                alpha: 1.0
-                            )
-                        )
-                    ]
-                ),
-                startPoint: .leading,
-                endPoint: .trailing
-            )
-        )
+        .background(backgroundGradient)
         .cornerRadius(12)
         .shadow(radius: 5)
         .frame(height: 100)
-        
     }
     
-    func toggleMute() {
+    private func toggleMute() {
         isMuted.toggle()
         audioPlayer?.volume = isMuted ? 0.0 : 1.0
     }
@@ -123,5 +72,4 @@ struct BottomBarView: View {
         )
     }
 }
-
 

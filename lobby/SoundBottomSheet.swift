@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct SoundBottomSheet<Content: View>: View {
     @Binding var isPresented: Bool
     let maxHeight: CGFloat
@@ -28,16 +27,17 @@ struct SoundBottomSheet<Content: View>: View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
-                self.content
-                    .frame(width: geometry.size.width, height: self.maxHeight)
-                    .background(Color.white)
-                    .cornerRadius(16)
-                    .shadow(radius: 5)
-                    .offset(y: self.offset)
-                    .animation(.interactiveSpring())
+                content
+                    .frame(width: geometry.size.width, height: maxHeight)
+                    .background(
+                        Color.white
+                            .cornerRadius(16)
+                            .shadow(radius: 5)
+                    )
+                    .offset(y: offset)
+                    .animation(.interactiveSpring(), value: isPresented)
             }
             .edgesIgnoringSafeArea(.all)
         }
     }
 }
-

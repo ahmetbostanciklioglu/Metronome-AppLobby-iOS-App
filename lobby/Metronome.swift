@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct lobbyApp: App {
+struct Metronome: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
